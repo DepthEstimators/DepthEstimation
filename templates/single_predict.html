@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Jpeg file Depth Map</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="imageFile"/>
+    <input type="submit">
+</form>
+<p>Result:</p>
+    <img src="{{ imageFile }}" />
+    <img src="{{ result }}" />
+</body>
+</html>

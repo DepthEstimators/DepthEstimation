@@ -57,6 +57,38 @@ def parse_args():
                         help='path to output folder of images')
     return parser.parse_args()
 
+def parse_args(args):
+    parser = argparse.ArgumentParser(
+        description='Simple testing funtion for Monodepthv2 models.')
+
+    parser.add_argument('--input_path', type=str,
+                        help='path to a test image or folder of images', required=True)
+    parser.add_argument('--model_name', type=str,
+                        help='name of a pretrained model to use',
+                        choices=[
+                            "mono_640x192",
+                            "stereo_640x192",
+                            "mono+stereo_640x192",
+                            "mono_no_pt_640x192",
+                            "stereo_no_pt_640x192",
+                            "mono+stereo_no_pt_640x192",
+                            "mono_1024x320",
+                            "stereo_1024x320",
+                            "mono+stereo_1024x320"])
+    parser.add_argument('--ext', type=str,
+                        help='image extension to search for in folder', default="jpg")
+    parser.add_argument("--no_cuda",
+                        help='if set, disables CUDA',
+                        action='store_true')
+    parser.add_argument("--pred_metric_depth",
+                        help='if set, predicts metric depth instead of disparity. (This only '
+                             'makes sense for stereo-trained KITTI models).',
+                        action='store_true')
+    parser.add_argument('--output_path', type=str,
+                        help='path to output folder of images')
+    return parser.parse_args(args)
+
+
 
 def test_simple(args):
     """Function to predict for a single image or folder of images

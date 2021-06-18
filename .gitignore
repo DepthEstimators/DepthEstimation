@@ -5,3 +5,6 @@ __pycache__
 *.npz
 kitti_data
 models
+assets
+test
+.idea/
