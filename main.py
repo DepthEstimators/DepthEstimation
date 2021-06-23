@@ -11,6 +11,9 @@ from typing import Optional
 from pathlib import Path
 
 from fastapi import FastAPI, File, UploadFile, Response, Request, Form
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+#from app.api import viz
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 import os
@@ -21,11 +24,18 @@ import ProcessVideoFiles as video_test_simple
 from fastapi.templating import Jinja2Templates
 
 demo_image_path = "./assets/test_image_disp.jpeg"
-app = FastAPI()
+app = FastAPI(title='Depth Estimation API', description="API with produces disparity map with depth estimation given input images, video files.",
+              version='0.1', docs_url='/',)
 model_name = "mono+stereo_640x192"
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 app.mount("/test", StaticFiles(directory="test"), name="test")
-
+app.add_middleware(
+CORSMiddleware,
+allow_origins=['*'],
+allow_credentials=True,
+allow_methods=['*'],
+allow_headers=['*'],
+)
 templates = Jinja2Templates(directory="templates/")
 
 @app.get("/")
@@ -56,7 +66,7 @@ async def predict_single(request:Request, imageFile: UploadFile = File(...)):
     args = test_simple.parse_args(shlex.split(args_str))
     test_simple.test_simple(args)
 
-    result = "./assets/uploadSingle_disp.jpeg"
+    result = "../assets/uploadSingle_disp.jpeg"
     return templates.TemplateResponse('single_predict.html', context={'request': request, 'result': result})
 
 @app.get("/predict/video")
@@ -79,11 +89,11 @@ async def predict_video(request:Request, videoFile: UploadFile = File(...)):
     args = video_test_simple.parse_args(shlex.split(args_str))
     video_test_simple.test_simple(args)
 
-    result = video_path
+    source = "../test/uploadVideo.mp4"
+    return templates.TemplateResponse('video_predict.html', context={'request': request,  'source':source})
 
-    return templates.TemplateResponse('video_predict.html', context={'request': request, 'result': result})
-
-
+if __name__ == '__main__':
+    uvicorn.run(app)
 
 
 

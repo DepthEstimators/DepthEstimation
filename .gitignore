@@ -7,4 +7,5 @@ kitti_data
 models
 assets
 test
-.idea/
+.idea
+venv
