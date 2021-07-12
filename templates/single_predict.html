@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Depth Estimation</title>
+    <style>
+    body {
+      background-image: url('../static/back.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      text-align:center;
+      font-family: Verdana, sans-serif;
+   }
+   div {
+      text-align:center;
+      background-color:#FFE40F;
+      margin: auto;
+      width: 90%;
+      border: 3px solid #B06310;
+      padding: 10px;
+   }
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      float: left;
+      width: 50.00%;
+      padding: 5px;
+      border: none;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
+</head>
+<body>
+<div class="row">
+  <div class="column">
+    <img src="{{ input }}" alt="Input" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ output }}" alt="Output" style="width:100%">
+  </div>
+</div>
+</body>
+</html>

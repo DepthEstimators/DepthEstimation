@@ -1,0 +1,91 @@
+DepthDecoder(
+  (decoder): ModuleList(
+    (0): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (1): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (2): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (3): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (4): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (5): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (6): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (7): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(96, 32, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (8): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (9): ConvBlock(
+      (conv): Conv3x3(
+        (pad): ReflectionPad2d((1, 1, 1, 1))
+        (conv): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1))
+      )
+      (nonlin): ELU(alpha=1.0, inplace)
+    )
+    (10): Conv3x3(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+      (conv): Conv2d(16, 1, kernel_size=(3, 3), stride=(1, 1))
+    )
+    (11): Conv3x3(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+      (conv): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1))
+    )
+    (12): Conv3x3(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+      (conv): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1))
+    )
+    (13): Conv3x3(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+      (conv): Conv2d(128, 1, kernel_size=(3, 3), stride=(1, 1))
+    )
+  )
+  (sigmoid): Sigmoid()
+)
