@@ -1,0 +1,73 @@
+<html>
+   <style>
+   body {
+      background-image: url('../static/back.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      text-align:center;
+      font-family: Verdana, sans-serif;
+   }
+   div {
+      text-align:center;
+      background-color:#FFE40F;
+      margin: auto;
+      width: 60%;
+      border: 3px solid #B06310;
+      padding: 10px;
+   }
+   </style>
+   <body>
+      <br>
+      <br>
+      <div>
+         <br>
+         <title>Depth Estimation </title>
+         <h1>Depth Estimators </h1><br>
+         <h3> FourthBrain Machine Learning Program <br>
+            Capstone Project <br>
+            March 2021 Cohort
+         </h3>
+
+         <br>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div>
+         <br>
+         <form action = "/predict" method = "POST"
+               enctype = "multipart/form-data">
+               <input type = "file" name = "file" label="Choose File (.jpg / .jpeg / .mp4 )" />
+               <!-- <br>
+               <label for="encoderType">Choose an Encoder:</label>
+               <select name="encoderType" id="encoderType">
+                  <option value="18" selected>ResNet18</option>
+                  <option value="34">ResNet34</option>
+                  <option value="50">ResNet50</option>
+                  <option value="101">ResNet101</option>
+                  <option value="152">ResNet152</option>
+
+               </select> -->
+               <input type = "submit"/>
+
+         </form>
+         <p>
+            Upload an image or video file here.
+         </p>
+         <br>
+      </div>
+      <br>
+      <br>
+      <div>
+         <br>
+         <p>
+               Spatika Ganesh  &emsp;&emsp;   Vinay Nooji   &emsp;&emsp; Mallori Harrell
+         </p>
+         <br>
+      </div>
+      <br>
+      <br>
+   </body>
+</html>

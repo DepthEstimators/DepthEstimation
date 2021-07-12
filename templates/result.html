@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Depth Estimation</title>
+    <style>
+        body {
+            background-image: url('../static/back.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            text-align:center;
+            font-family: Verdana, sans-serif;
+        }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/rps.png");
+            background-color: #cccccc;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+       div {
+          text-align:center;
+          background-color:#FFE40F;
+          margin: auto;
+          width: 90%;
+          border: 3px solid #B06310;
+          padding: 10px;
+       }
+    </style>
+</head>
+
+<body>
+    <form action = "/video" method = "POST"
+     enctype = "multipart/form-data">
+     <input type = "file" name = "file" />
+     <input type = "submit"/>
+    </form>
+    <div class="hero-image">
+        <div class="hero-text">
+            <img id="bg" src="{{ url_for('video') }}">
+        </div>
+    </div>
+</body>
+
+</html>
